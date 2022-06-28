@@ -47,6 +47,8 @@ echo -e "\e[34m Installing dalfox ...\e[0m"
 
 go install github.com/hahwul/dalfox/v2@latest
 
+cd $HOME
+
 echo -e "\e[34m Installing nuclei-templates ...\e[0m"
 
 git clone https://github.com/projectdiscovery/nuclei-templates.git
@@ -57,7 +59,9 @@ apt install photon -y
 
 echo -e "\e[34m Installing arjun ...\e[0m"
 
-pip3 install arjun
+pip3 install arjun 
+
+cd $HOME
 
 cd go/bin
 mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox /usr/bin
