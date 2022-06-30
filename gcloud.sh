@@ -90,3 +90,7 @@ mkdir .gf
 mv ~/Gf-Patterns/*.json ~/.gf
 
 cd $HOME
+
+cd Bug-Bounty-tools
+
+mv -v crt.sh xss.sh $HOME
