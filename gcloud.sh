@@ -71,7 +71,7 @@ cd $HOME
 clear
 echo -e "\e[34m .....................................Installing gf ...\e[0m"
 
-go get github.com/tomnomnom/gf
+go install github.com/tomnomnom/gf
 
 
 cd gopath/bin
