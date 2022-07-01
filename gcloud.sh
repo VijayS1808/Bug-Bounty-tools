@@ -69,27 +69,7 @@ cd go/bin
 mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox /usr/bin
 cd $HOME
 clear
-echo -e "\e[34m .....................................Installing gf ...\e[0m"
 
-go install github.com/tomnomnom/gf
-
-
-cd gopath/bin
-
-mv -v gf /usr/bin
-
-cd $HOME
-
-echo -e "\e[34m .....................................Installing gf-patterns ...\e[0m"
-
-
-git clone https://github.com/1ndianl33t/Gf-Patterns
-
-mkdir .gf
-
-mv ~/Gf-Patterns/*.json ~/.gf
-
-cd $HOME
 
 cd Bug-Bounty-tools
 
