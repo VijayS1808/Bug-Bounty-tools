@@ -95,7 +95,7 @@ mv ~/Gf-Patterns/*.json ~/.gf
 
 wget https://github.com/KathanP19/Gxss/releases/download/v4.1/Gxss_4.1_Linux_x86_64.tar.gz
 
-tar -xvf Gxss_4.1_Linux_i386.tar.gz
+tar -xvzf Gxss_4.1_Linux_i386.tar.gz
 
 mv -v Gxss /usr/bin
 
