@@ -6,4 +6,4 @@ read s
 
 waybackurls $s | gf xss | sed 's/=.*/=/' | sort -u | uniq | tee urls.txt
 
-tee urls.txt | dalfox pipe --silence --skip-mining-dict --skip-mining-all >> output.txt
+tee urls.txt | Gxss -p test | dalfox pipe --silence --skip-mining-dict --skip-mining-all >> output.txt
