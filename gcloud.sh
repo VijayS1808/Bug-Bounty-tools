@@ -76,10 +76,13 @@ clear
 
 
 cd Bug-Bounty-tools
+mv -v xss.sh $HOME
+cd $HOME
+
 
 go get -u github.com/tomnomnom/gf
 
-cd $HOME
+
 
 cd gopath/bin
 
@@ -102,5 +105,6 @@ mv -v Gxss /usr/bin
 rm -rf Gxss_4.1_Linux_i386.tar.gz
 
 cd $HOME
+
 
 
