@@ -65,6 +65,9 @@ echo -e "\e[34m Installing arjun ...\e[0m"
 
 pip3 install arjun
 cd $HOME
+
+echo -e "\e[34m ..............Go to Directory "go/bin"...\e[0m"
+
 cd go/bin
 mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox /usr/bin
 cd $HOME
@@ -72,5 +75,17 @@ clear
 
 
 cd Bug-Bounty-tools
+cd $HOME
+go get -u github.com/tomnomnom/gf
 
-mv -v crt.sh xss.sh $HOME
+cd gopath/bin
+
+mv -v gf /usr/bin
+
+cd $HOME
+
+git clone https://github.com/1ndianl33t/Gf-Patterns
+
+mkdir .gf
+
+mv ~/Gf-Patterns/*.json ~/.gf
