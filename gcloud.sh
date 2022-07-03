@@ -6,9 +6,11 @@
 
 #!/bin/bash
 
+apt install figlet -y
+apt install toilet -y
 
 
-echo -e "\e[33m @ Tool made by Vijay Sutar@ \e[0m"
+echo -e "\e[33m @ ...............Tool made by @Vijay Sutar@ \e[0m"
 
 echo -e "\e[31m Let's start!!!\e[0m"
 
@@ -75,8 +77,10 @@ clear
 
 
 cd Bug-Bounty-tools
-cd $HOME
+
 go get -u github.com/tomnomnom/gf
+
+cd $HOME
 
 cd gopath/bin
 
