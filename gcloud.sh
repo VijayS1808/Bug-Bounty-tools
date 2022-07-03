@@ -9,8 +9,10 @@
 apt install figlet -y
 apt install toilet -y
 
+toilet BBT --gay
 
-echo -e "\e[33m @ ...............Tool made by @Vijay Sutar@ \e[0m"
+
+echo -e "\e[33m ...............@Tool made by "Vijay Sutar" \e[0m"
 
 echo -e "\e[31m Let's start!!!\e[0m"
 
