@@ -13,3 +13,9 @@ I have created tools for peoples which are using google cloud shell for bug hunt
 6) nuclei
 7) gau
 8) httprobe
+9) gf
+10) Gf-Patterns
+
+Note: If gf not installed properly, Please install manually.
+
+go get -u github.com/tomnomnom/gf
