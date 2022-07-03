@@ -19,3 +19,20 @@ I have created tools for peoples which are using google cloud shell for bug hunt
 Note: If gf not installed properly, Please install manually.
 
 go get -u github.com/tomnomnom/gf
+
+
+## How to use Xss.sh
+
+##Install Gxss
+
+wget https://github.com/KathanP19/Gxss/releases/download/v4.1/Gxss_4.1_Linux_x86_64.tar.gz
+
+## Unzip file:
+
+tar -xvzf Gxss_4.1_Linux_i386.tar.gz
+
+## Move Gxss into /usr/bin
+
+mv -v Gxss /usr/bin
+
+rm -rf Gxss_4.1_Linux_i386.tar.gz
