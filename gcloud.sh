@@ -1,9 +1,3 @@
-
-
-
-
-
-
 #!/bin/bash
 
 apt install figlet -y
@@ -11,8 +5,11 @@ apt install toilet -y
 
 toilet BBT --gay
 
+ls
 
-echo -e "\e[33m ...............@Tool made by "Vijay Sutar" \e[0m"
+ echo -e "\e[1;31;47m .......@Tool made by "Vijay Sutar" \e[1m" 
+ 
+ ls
 
 echo -e "\e[31m Let's start!!!\e[0m"
 
@@ -99,3 +96,11 @@ mv ~/Gf-Patterns/*.json ~/.gf
 wget https://github.com/KathanP19/Gxss/releases/download/v4.1/Gxss_4.1_Linux_x86_64.tar.gz
 
 tar -xvf Gxss_4.1_Linux_i386.tar.gz
+
+mv -v Gxss /usr/bin
+
+rm -rf Gxss_4.1_Linux_i386.tar.gz
+
+cd $HOME
+
+
