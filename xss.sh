@@ -1,4 +1,9 @@
-echo "Enter your Domain Name"
+toilet XSS --gay
+
+echo -e "\e[1;31;47m "Enter the domain::: \e[1m" 
+
 read s
 
-waybackurls $s | gf xss | sed 's/=.*/=/' | sort -u | uniq | tee FILE.txt && cat FILE.txt | dalfox -b https://vvsutar.xss.ht pipe > OUT.txt
+waybackurls $s | gf xss | sed 's/=.*/=/' | sort -u | uniq | tee urls.txt
+
+tee urls.txt | dalfox pipe --silence --skip-mining-dict --skip-mining-all >> output.txt
