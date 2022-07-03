@@ -1,6 +1,6 @@
 toilet XSS --gay
 
-echo -e "\e[1;31;47m "Enter the domain::: \e[1m" 
+echo -e "\e[1;31;47m "Enter the domain::: " \e[1m" 
 
 read s
 
