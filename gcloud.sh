@@ -86,7 +86,7 @@ clear
 
 
 cd Bug-Bounty-tools
-mv -v xss.sh $HOME
+mv -v  gcloud.sh xss.sh $HOME
 cd $HOME
 
 
@@ -99,6 +99,8 @@ git clone https://github.com/1ndianl33t/Gf-Patterns
 mv ~/Gf-Patterns/*.json ~/.gf
 
 cd $HOME
+
+
 
 
 
