@@ -37,7 +37,9 @@ echo -e "\e[34m Installing gau ...\e[0m"
 
 go install github.com/lc/gau/v2/cmd/gau@latest
 
-go get -u github.com/tomnomnom/gf
+git clone https://github.com/tomnomnom/gf
+
+
 
 echo -e "\e[34m Installing qsreplace ...\e[0m"
 
@@ -100,6 +102,12 @@ git clone https://github.com/1ndianl33t/Gf-Patterns
 mkdir .gf
 
 mv ~/Gf-Patterns/*.json ~/.gf
+
+cd $HOME
+cd gf
+cd examples
+cp * /root/.gf
+cd $HOME
 
 
 
