@@ -36,9 +36,12 @@ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 echo -e "\e[34m Installing gau ...\e[0m"
 
 go install github.com/lc/gau/v2/cmd/gau@latest
-
-git clone https://github.com/tomnomnom/gf
-
+git clone https://github.com/tomnomnom/gf.git
+mkdir .gf
+cd gf
+cd examples
+cp * /root/.gf
+cd $HOME
 
 
 echo -e "\e[34m Installing qsreplace ...\e[0m"
@@ -87,27 +90,16 @@ mv -v xss.sh $HOME
 cd $HOME
 
 
-go get -u github.com/tomnomnom/gf
 
-
-
-cd gopath/bin
-
-mv -v gf /usr/bin
-
-cd $HOME
 
 git clone https://github.com/1ndianl33t/Gf-Patterns
 
-mkdir .gf
+
 
 mv ~/Gf-Patterns/*.json ~/.gf
 
 cd $HOME
-cd gf
-cd examples
-cp * /root/.gf
-cd $HOME
+
 
 
 
