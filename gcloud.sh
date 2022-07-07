@@ -37,6 +37,8 @@ echo -e "\e[34m Installing gau ...\e[0m"
 
 go install github.com/lc/gau/v2/cmd/gau@latest
 
+go get -u github.com/tomnomnom/gf
+
 echo -e "\e[34m Installing qsreplace ...\e[0m"
 
 go install github.com/tomnomnom/qsreplace@latest
@@ -71,6 +73,9 @@ echo -e "\e[34m ..............Go to Directory "go/bin"...\e[0m"
 
 cd go/bin
 mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox /usr/bin
+cd $HOME
+cd gopath/bin
+mv -v gf /usr/bin
 cd $HOME
 clear
 
