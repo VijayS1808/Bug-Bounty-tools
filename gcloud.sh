@@ -86,7 +86,7 @@ cd $HOME
 
 
 
-
+mkdir .gf
 git clone https://github.com/1ndianl33t/Gf-Patterns
 
 
