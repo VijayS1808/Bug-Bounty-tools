@@ -36,11 +36,8 @@ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 echo -e "\e[34m Installing gau ...\e[0m"
 
 go install github.com/lc/gau/v2/cmd/gau@latest
-git clone https://github.com/tomnomnom/gf.git
-mkdir .gf
-cd gf
-cd examples
-cp * /root/.gf
+
+
 cd $HOME
 
 
@@ -79,9 +76,7 @@ echo -e "\e[34m ..............Go to Directory "go/bin"...\e[0m"
 cd go/bin
 mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox /usr/bin
 cd $HOME
-cd gopath/bin
-mv -v gf /usr/bin
-cd $HOME
+
 clear
 
 
