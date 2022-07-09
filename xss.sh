@@ -24,7 +24,7 @@ waybackurls $s | grep "=" | gf xss | sort -u | tee urls.txt
 cat urls.txt | httpx -mc 200 | tee 200.txt
 
 tee 200.txt | uro | Gxss -p test | tee dalfox.txt
-cat dalfox.txt | dalfox pipe --silence --skip-mining-dict --skip-mining-all  | tee out.txt
+cat dalfox.txt | dalfox pipe --skip-bav r --silence --skip-mining-dom --ignore-return 302,404,403 -only-custom-payload xss.txt | tee out.txt
 
 rm -rf urls.txt 200.txt dalfox.txt
 
