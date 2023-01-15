@@ -15,11 +15,8 @@ pip3 install uro
 
 toilet XSS --gay
 
-echo -e "\e[1;31;47m "Enter the domain::: " \e[1m"
 
-read s
-
-waybackurls $s | grep "=" | gf xss | sort -u | tee urls.txt
+waybackurls $1 | grep "=" | uniq | sort -u | tee urls.txt
 
 cat urls.txt | httpx -mc 200 | tee 200.txt
 
