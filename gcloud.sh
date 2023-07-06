@@ -64,7 +64,7 @@ git clone https://github.com/projectdiscovery/nuclei-templates.git
 
 echo -e "\e[34m Installing photon ...\e[0m"
 
-apt install photon -y
+pip3 install photon -y
 
 echo -e "\e[34m Installing arjun ...\e[0m"
 
