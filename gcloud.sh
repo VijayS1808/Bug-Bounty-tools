@@ -33,7 +33,12 @@ echo -e "\e[34m Installing nuclei ...\e[0m"
 
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 
+echo -e "\e[34m Installing subfinder ...\e[0m"
+
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+
 echo -e "\e[34m Installing gau ...\e[0m"
+
 
 go install github.com/lc/gau/v2/cmd/gau@latest
 
