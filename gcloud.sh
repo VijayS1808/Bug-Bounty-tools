@@ -79,7 +79,7 @@ cd $HOME
 echo -e "\e[34m ..............Go to Directory "go/bin"...\e[0m"
 
 cd go/bin
-mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox /usr/bin
+mv -v waybackurls nuclei gau qsreplace httpx httprobe dalfox subfinder /usr/bin
 cd $HOME
 
 clear
