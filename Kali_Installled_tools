@@ -1,5 +1,4 @@
 apt install golang
-
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
 go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest
@@ -12,3 +11,16 @@ go install -v github.com/projectdiscovery/interactsh/cmd/interactsh-client@lates
 git clone https://github.com/projectdiscovery/fuzzing-templates.git
 go install github.com/hahwul/authz0@latest
 go install github.com/hahwul/dalfox/v2@latest
+pip install arjun
+pip install sqlmap
+go install github.com/lc/gau/v2/cmd/gau@latest
+apt install trufflehog -y
+go install github.com/ffuf/ffuf/v2@latest
+apt install dirsearch -y
+pip3 install parth
+pip3 install photon
+git clone https://github.com/s0md3v/XSStrike.git
+pip3 install uro
+git clone https://github.com/s0md3v/Corsy.git
+pip3 install hardcodes
+
