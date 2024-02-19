@@ -42,4 +42,21 @@ go install -v github.com/tomnomnom/anew@latest
 go install github.com/tomnomnom/waybackurls@latest
 go install github.com/tomnomnom/assetfinder@latest
 go install github.com/tomnomnom/qsreplace@latest
+apt install sublist3r
+apt install amass -y
+pip install as3nt
+git clone https://github.com/guelfoweb/knock.git
+go install github.com/glebarez/cero@latest
+https://github.com/michenriksen/aquatone
+apt install gobuster -y
+git clone https://github.com/GerbenJavado/LinkFinder.git
+git clone https://github.com/devanshbatham/ParamSpider.git
+go install github.com/devanshbatham/headerpwn@v0.0.3
+git clone https://github.com/devanshbatham/OpenRedireX.git
+git clone https://github.com/Sh1Yo/x8.git
+pip3 install ote
+go install github.com/mlcsec/headi@latest
+https://github.com/Quitten/robots.py.git
+
+
 
