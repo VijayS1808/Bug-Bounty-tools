@@ -23,4 +23,23 @@ git clone https://github.com/s0md3v/XSStrike.git
 pip3 install uro
 git clone https://github.com/s0md3v/Corsy.git
 pip3 install hardcodes
+go install github.com/Emoe/kxss@latest
+git clone https://github.com/KathanP19/JSFScan.sh.git
+go install github.com/KathanP19/Gxss@latest
+git clone https://github.com/KathanP19/gaussrf.git
+go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest
+go install github.com/dwisiswant0/galer@latest
+go install github.com/dwisiswant0/cf-check@latest
+git clone https://github.com/dwisiswant0/findom-xss.git --recurse-submodules
+go install github.com/dwisiswant0/hinject@latest
+git clone https://github.com/yunemse48/403bypasser.git
+git clone https://github.com/Dheerajmadhukar/4-ZERO-3.git
+git clone https://github.com/devploit/dontgo403.git
+git clone https://github.com/byt3hx/403-bypass.git
+go install github.com/daffainfo/bypass-403@latest
+go install github.com/tomnomnom/gf@latest
+go install -v github.com/tomnomnom/anew@latest
+go install github.com/tomnomnom/waybackurls@latest
+go install github.com/tomnomnom/assetfinder@latest
+go install github.com/tomnomnom/qsreplace@latest
 
