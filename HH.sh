@@ -100,10 +100,12 @@ fi
 
 # Read custom headers from the provided file and set evil.com as the value for all headers
 headers=()
+echo "Reading headers from $headers_file..."
 while IFS= read -r header; do
   if [[ "$header" =~ ^[^:]+: ]]; then  # Ensure the line has a valid header format
     header_name=$(echo "$header" | cut -d ':' -f 1)
     headers+=("-H $header_name: evil.com")
+    echo "Header: $header_name: evil.com"
   fi
 done < "$headers_file"
 
@@ -118,6 +120,8 @@ else
   exit 1
 fi
 
+echo "Reading subdomains from $subdomains_file..."
+
 # Test for injection vulnerabilities with the provided custom headers
 while IFS= read -r subdomain; do
   # Ensure the subdomain is valid
@@ -129,6 +133,7 @@ while IFS= read -r subdomain; do
   curl_command="curl --max-time 5 -s -I -H 'Host: evil.com' ${headers[@]} '$subdomain'"
 
   # Execute the curl command
+  echo "Testing $subdomain for Host Header Injection..."
   response=$($curl_command)
 
   # Check for vulnerabilities based on the response
@@ -138,3 +143,5 @@ while IFS= read -r subdomain; do
     print_color "32" "$subdomain is not vulnerable to Host Header Injection"  # Green color for no vulnerability
   fi
 done < "$subdomains_file"
+
+echo "Script execution completed."
