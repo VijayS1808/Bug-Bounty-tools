@@ -1,72 +1,176 @@
 #!/bin/bash
 
-# Function to print in color
-print_color() {
-  color_code="$1"
-  message="$2"
-  echo -e "\033[${color_code}m${message}\033[0m"
+# ================== Color Definitions ==================
+NC='\033[0m'                   # No Color
+RED='\033[1;38;5;196m'         # Bright Red
+GREEN='\033[1;38;5;040m'       # Bright Green
+ORANGE='\033[1;38;5;202m'      # Bright Orange
+BLUE='\033[1;38;5;012m'        # Bright Blue
+BLUE2='\033[1;38;5;032m'       # Another shade of Blue
+PINK='\033[1;38;5;013m'        # Bright Pink
+GRAY='\033[1;38;5;004m'        # Gray
+NEW='\033[1;38;5;154m'         # New Color
+YELLOW='\033[1;38;5;214m'      # Bright Yellow
+CG='\033[1;38;5;087m'          # Cyan Green
+CP='\033[1;38;5;221m'          # Cyan Pink
+CPO='\033[1;38;5;205m'         # Cyan Pink Orange
+CN='\033[1;38;5;247m'          # Cyan Normal
+CNC='\033[1;38;5;051m'         # Cyan Cyan
+
+# ================== Banner Function ==================
+function banner(){
+    echo -e "${RED}#####################################################################"
+    echo -e "${CP}    _   _           _     ___        _           _                   #"
+    echo -e "${CP}   | | | | ___  ___| |_  |_ _|_ __  (_) ___  ___| |_ ___  _ __       #"
+    echo -e "${CP}   | |_| |/ _ \/ __| __|  | || '_ \ | |/ _ \/ __| __/ _ \| '__|      #"
+    echo -e "${CP}   |  _  | (_) \__ \ |_   | || | | || |  __/ (__| || (_) | |         #"
+    echo -e "${CP}   |_| |_|\___/|___/\__| |___|_| |_|/ |\___|\___|\__\___/|_|         #"
+    echo -e "${CP}                                  |__/                               #"
+    echo -e "${BLUE2}          A Framework for Host Header Injection                      #"
+    echo -e "${YELLOW}             https://facebook.com/unknownclay                        #"
+    echo -e "${ORANGE}             Coded By: Machine404                                    #"
+    echo -e "${BLUE}             https://github.com/machine1337                          #"
+    echo -e "${RED}#####################################################################${NC}"
 }
 
-# Set the headers and subdomains file
-headers_file="headers.txt"
-subdomains_file="sub.txt"
-
-# Ensure necessary tools are installed
-for tool in subfinder httpx curl; do
-  if ! command -v "$tool" &>/dev/null; then
-    echo "Error: $tool is not installed."
-    exit 1
-  fi
-done
-
-# Check if the headers file exists and is non-empty
-if [ -f "$headers_file" ]; then
-  if [ ! -s "$headers_file" ]; then
-    echo "Error: The headers file is empty."
-    exit 1
-  fi
+# ================== Internet Connectivity Check ==================
+echo -e "${CP}[+] Checking Internet Connectivity${NC}"
+if ping -c 1 8.8.8.8 &> /dev/null; then
+    echo -e "${GREEN}Internet is present${NC}"
 else
-  echo "Error: No headers file provided or the file does not exist."
-  exit 1
+    echo -e "${RED}No Internet Connection${NC}"
+    exit 1
 fi
 
-# Read custom headers from the provided file and set evil.com as the value for all headers
-headers=()
-while IFS= read -r header; do
-  if [[ "$header" =~ ^[^:]+: ]]; then  # Ensure the line has a valid header format
-    header_name=$(echo "$header" | cut -d ':' -f 1)
-    headers+=("-H $header_name: evil.com")
-  fi
-done < "$headers_file"
+# ================== Inject Single Domain Function ==================
+function inject_single(){
+    clear
+    banner
+    echo -e -n "${BLUE}\n[+] Enter domain name (e.g https://target.com) : ${NC}"
+    read domain
 
-# Ensure the subdomains file exists and is non-empty
-if [ -f "$subdomains_file" ]; then
-  if [ ! -s "$subdomains_file" ]; then
-    echo "Error: The subdomains file is empty."
-    exit 1
-  fi
-else
-  echo "Error: No subdomains file provided or the file does not exist."
-  exit 1
-fi
+    # Validate domain input
+    if [[ -z "$domain" ]]; then
+        echo -e "${RED}[!] No domain entered. Exiting.${NC}"
+        exit 1
+    fi
 
-# Test for injection vulnerabilities with the provided custom headers
-while IFS= read -r subdomain; do
-  # Ensure the subdomain is valid
-  if [[ ! "$subdomain" =~ ^https?:// ]]; then
-    subdomain="http://$subdomain"  # Assume HTTP if not specified
-  fi
+    # Check if headers.txt exists
+    if [[ ! -f "headers.txt" ]]; then
+        echo -e "${RED}[!] Headers file not found: headers.txt${NC}"
+        exit 1
+    fi
 
-  # Building the curl command with dynamic headers
-  curl_command="curl --max-time 5 -s -I -H 'Host: evil.com' ${headers[@]} '$subdomain'"
+    echo -e "${CNC}\n[+] Searching For Host Header Injection${NC}"
+    
+    # Read headers from headers.txt
+    headers=$(paste -sd "; " headers.txt)
 
-  # Execute the curl command
-  response=$($curl_command)
+    # Send request with custom headers
+    response=$(curl -s -m5 -I "$domain" $(echo "$headers" | awk -F'; ' '{for(i=1;i<=NF;i++) printf "-H \"%s\" ", $i}'))
 
-  # Check for vulnerabilities based on the response
-  if echo "$response" | grep -q "evil.com"; then
-    print_color "31" "$subdomain is vulnerable to Host Header Injection"  # Red color for vulnerability
-  else
-    print_color "32" "$subdomain is not vulnerable to Host Header Injection"  # Green color for no vulnerability
-  fi
-done < "$subdomains_file"
+    # Save response to output.txt
+    echo -e "${YELLOW}\nURL: $domain${NC}" > output.txt
+    echo "$response" >> output.txt
+
+    # Check for 'evil' in the response headers
+    if echo "$response" | grep -iq "evil"; then
+        echo -e "${RED}URL: $domain  [Vulnerable]${NC}"
+        echo "URL: $domain - Vulnerable at $(date)" >> vulnerable_urls.txt
+    else
+        echo -e "${GREEN}URL: $domain  [Not Vulnerable]${NC}"
+    fi
+
+    # Clean up
+    rm -f output.txt
+}
+
+# ================== Inject Multiple URLs Function ==================
+function inject_urls(){
+    clear
+    banner
+
+    # Define target and headers files
+    urls_file="sub.txt"
+    headers_file="headers.txt"
+
+    # Check if target and headers files exist
+    if [[ ! -f "$urls_file" ]]; then
+        echo -e "${RED}[!] Target file not found: $urls_file${NC}"
+        exit 1
+    fi
+
+    if [[ ! -f "$headers_file" ]]; then
+        echo -e "${RED}[!] Headers file not found: $headers_file${NC}"
+        exit 1
+    fi
+
+    echo -e "${PINK}\n[+] Reading target URLs from $urls_file${NC}"
+    echo -e "${CNC}[+] Searching For Host Header Injection${NC}"
+
+    # Read headers from headers.txt
+    headers=$(paste -sd "; " "$headers_file")
+
+    # Iterate through each URL in sub.txt
+    while IFS= read -r target || [[ -n "$target" ]]; do
+        # Skip empty lines
+        [[ -z "$target" ]] && continue
+
+        # Send request with custom headers
+        response=$(curl -s -m5 -I "$target" $(echo "$headers" | awk -F'; ' '{for(i=1;i<=NF;i++) printf "-H \"%s\" ", $i}'))
+
+        # Save response to output.txt
+        echo -e "${YELLOW}\nURL: $target${NC}" > output.txt
+        echo "$response" >> output.txt
+
+        # Check for 'evil' in the response headers
+        if echo "$response" | grep -iq "evil"; then
+            echo -e "${RED}URL: $target  [Vulnerable]${NC}"
+            echo "URL: $target - Vulnerable at $(date)" >> vulnerable_urls.txt
+        else
+            echo -e "${GREEN}URL: $target  [Not Vulnerable]${NC}"
+        fi
+
+        # Clean up
+        rm -f output.txt
+    done < "$urls_file"
+
+    echo -e "${YELLOW}\nScan completed. Check vulnerable_urls.txt for results.${NC}"
+}
+
+# ================== Menu Function ==================
+function menu(){
+    while true; do
+        clear
+        banner
+        echo -e "${YELLOW}\n[*] Which Type of Scan do you want to Perform?${NC}\n"
+        echo -e "  ${NC}[${CG}1${NC}]${CNC} Single domain Scan"
+        echo -e "  ${NC}[${CG}2${NC}]${CNC} List of domains Scan (from sub.txt)"
+        echo -e "  ${NC}[${CG}3${NC}]${CNC} Exit"
+
+        echo -ne "\n${YELLOW}[+] Select an option: ${NC}"
+        read -r host_play
+
+        case $host_play in
+            1)
+                inject_single
+                read -rp "Press Enter to return to the menu..."
+                ;;
+            2)
+                inject_urls
+                read -rp "Press Enter to return to the menu..."
+                ;;
+            3)
+                echo -e "${GREEN}Exiting. Goodbye!${NC}"
+                exit 0
+                ;;
+            *)
+                echo -e "${RED}[!] Invalid option. Please select 1, 2, or 3.${NC}"
+                sleep 2
+                ;;
+        esac
+    done
+}
+
+# ================== Start the Script ==================
+menu
