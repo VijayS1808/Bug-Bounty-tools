@@ -48,6 +48,7 @@ go install github.com/Ractiurd/catjs@latest
 ```
 
 🎯 SubScan 🎯 
+
 Chrome Extension for Subdomain Enumeration
 
 ```
@@ -60,6 +61,7 @@ const apiKey = "YOUR_SHODAN_API_KEY_HERE"; // Place your Shodan API key here
 ```
 
 🎯 jscracker 🎯 
+
 jscracker find secrets from given url. It can be any file extension. But the main motive of this tool to find js secrets.
 ```
 go install github.com/Ractiurd/jscracker@latest
@@ -74,6 +76,7 @@ go install -v github.com/cc1a2b/jshunter@latest
 ```
 
 🎯 JSParser - Secret-Finder 🎯 
+
 JSParser JSParser - Secret-Finder is a Python-based tool designed to analyze JavaScript files, extract direct API endpoints, and identify sensitive information such as API keys, tokens, and credentials. The tool is built using Flask and provides an easy-to-use web interface to perform these tasks.
 
 ```
@@ -99,6 +102,20 @@ git clone https://github.com/danielhidalgo2/jsexposures.git
 cd jsexposures
 ```
 
+🎯 subfalcon 🎯 
+
+subfalcon is a subdomain enumeration tool that allows you to discover and monitor subdomains for a given list of domains or a single domain. It fetches subdomains from various sources, checks for potential subdomain takeover vulnerabilities, saves findings to a SQLite database, and can notify updates via Discord.
+```
+go install github.com/cyinnove/subfalcon/cmd/subfalcon@latest
+```
+
+🎯 Subseeker 🎯 
+
+Subseeker is a sub-domain enumeration tool, which simply iterates the recon process for finding subdomains from a target domain.
+```
+git clone https://github.com/DFC302/subseeker.git
+chmod 755 core/subseeker.py
+```
 
 
 
