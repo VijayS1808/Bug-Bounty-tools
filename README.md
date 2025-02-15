@@ -124,6 +124,13 @@ Subdomains sacnner:
 go install github.com/cemulus/crt@latest
 ```
 
+🎯 Subdomz 🎯
+
+An Automated Subdomain Enumeration Tool
+```
+git clone https://github.com/0xPugal/Subdomz.git
+```
+
 
 
 
