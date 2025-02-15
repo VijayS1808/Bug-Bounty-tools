@@ -117,7 +117,12 @@ git clone https://github.com/DFC302/subseeker.git
 chmod 755 core/subseeker.py
 ```
 
+🎯 crt 🎯 
 
+Subdomains sacnner:
+```
+go install github.com/cemulus/crt@latest
+```
 
 
 
