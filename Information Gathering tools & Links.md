@@ -1,4 +1,4 @@
-📡  Google Dorking  
+📡  Google Dorking  🎯
 
 ```
 https://vijays1808.github.io/Advanced-google-dorking/
@@ -17,13 +17,13 @@ https://dorks.s1rn3tz.ovh/googledorks
 ```
 🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅
 
-📡   Github Dorking:
+📡   Github Dorking 🎯
 ```
 https://vsec7.github.io/
 ```
 🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅
 
-📡  Shodan Dorker:
+📡  Shodan Dorker 🎯
 ```
 https://dorks.s1rn3tz.ovh/shodandorks
 ```
@@ -32,7 +32,7 @@ https://dorks.s1rn3tz.ovh/shodandorks
 ```
 🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅🏅
 
-📡   Information Gathering:
+📡   Information Gathering 🎯
 ```
 https://freelancermijan.github.io/reconengine/
 ```
