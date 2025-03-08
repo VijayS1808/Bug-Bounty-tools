@@ -131,6 +131,12 @@ An Automated Subdomain Enumeration Tool
 git clone https://github.com/0xPugal/Subdomz.git
 ```
 
+🎯 Subdomz 🎯
+Find subdomains on GitHub.
+
+```
+go install github.com/gwen001/github-subdomains@latest
+```
 
 
 
