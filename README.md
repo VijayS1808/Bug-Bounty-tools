@@ -172,7 +172,17 @@ git clone https://github.com/sysdig/wafer && cd wafer && pip3 install -r require
 go install -v github.com/zan8in/afrog/v3/cmd/afrog@latest
 ```
 
+### Gourlex
 
+```
+go install github.com/trap-bytes/gourlex@latest
+```
+
+### Browser extension:
+
+```
+https://github.com/az0/linkgopher
+```
 
 # Host header injection"
 
