@@ -162,6 +162,12 @@ subprober -h
 go install github.com/edoardottt/csprecon/cmd/csprecon@latest
 ```
 
+### Subdomains Generator:
+
+```
+https://husseinphp.github.io/subdomain/
+```
+
 # Misc:
 
 ### Wafer: Wafer is a simple but effective web application firewall (WAF) fuzzing tool. It is designed to be used as a standalone script, it uses various techniques build payloads which could potentially bypass a WAF.
@@ -187,6 +193,14 @@ go install github.com/trap-bytes/gourlex@latest
 
 ```
 https://github.com/az0/linkgopher
+```
+
+### ex-param: ex-param is an automated tool designed for finding reflected parameters for XSS vulnerabilities. It crawls a target website, extracts GET parameters, and tests them for reflected input. The tool helps bug bounty hunters and penetration testers quickly identify potential reflected XSS flaws, offering fast and reliable results.
+
+```
+git clone https://github.com/rootDR/ex-param.git
+cd ex-param
+pip install -r requirements.txt
 ```
 
 # Host header injection"
