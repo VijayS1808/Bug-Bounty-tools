@@ -75,7 +75,7 @@ go build .
 
 🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯
 
-🎯 Subdomain Enumeration Tools
+### 🎯 Subdomain Enumeration Tools
 
 ## crtndstry: Lightweight subdomain finder
 
@@ -89,7 +89,7 @@ https://github.com/nahamsec/crtndstry.git
 pip install knock-subdomains
 ```
 
-## SubScan: Chrome Extension for subdomain enumeration
+# SubScan: Chrome Extension for subdomain enumeration
 
 ```
 git clone https://github.com/ractiurd/SubScan.git
