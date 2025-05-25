@@ -122,7 +122,7 @@ git clone https://github.com/0xPugal/Subdomz.git
 
 ## github-subdomains: Find subdomains via GitHub search
 
-``
+```
 go install github.com/gwen001/github-subdomains@latest
 ```
 
