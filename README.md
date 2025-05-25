@@ -126,6 +126,11 @@ git clone https://github.com/0xPugal/Subdomz.git
 go install github.com/gwen001/github-subdomains@latest
 ```
 
+### Subdominator: SubDominator helps you discover subdomains associated with a target domain efficiently and with minimal impact for your Bug Bounty
+
+```
+https://github.com/RevoltSecurities/Subdominator
+```
 
 
 
