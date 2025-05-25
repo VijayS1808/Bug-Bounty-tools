@@ -61,7 +61,15 @@ git clone https://github.com/danielhidalgo2/jsexposures.git
 cd jsexposures
 ```
 
-## 
+### API Tool Listing:
+
+## SJ:A tool for auditing endpoints defined in exposed (Swagger/OpenAPI) definition files.
+
+```
+git clone https://github.com/BishopFox/sj.git
+cd sj/
+go build .
+```
 
 
 
