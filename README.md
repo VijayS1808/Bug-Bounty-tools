@@ -156,6 +156,11 @@ pip install .
 subprober -h
 ```
 
+### csprecon: Discover new target domains using Content Security Policy
+
+```
+go install github.com/edoardottt/csprecon/cmd/csprecon@latest
+```
 
 # Misc:
 
@@ -193,6 +198,17 @@ Go scanner to find web cache poisoning vulnerabilities in a list of URLs
 go install github.com/xhzeem/toxicache@latest
 ```
 
+
+# Senditive data finder tools:
+
+### keyFinder: Keyfinder🔑 is a tool that let you find keys while surfing the web!
+
+```
+git clone https://github.com/momenbasel/KeyFinder.git
+open chrome and go to chrome://extensions
+Enable "Developer mode"
+drag and drop the keyFinder folder
+```
 
 
 
