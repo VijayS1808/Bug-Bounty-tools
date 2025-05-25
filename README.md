@@ -67,6 +67,15 @@ git clone https://github.com/danielhidalgo2/jsexposures.git
 cd jsexposures
 ```
 
+### Dons JS Scanner
+
+```
+git clone https://github.com/dragonked2/Dons.git
+cd Dons
+```
+
+
+
 # API Tool Listing:
 
 ###  SJ:A tool for auditing endpoints defined in exposed (Swagger/OpenAPI) definition files.
@@ -155,6 +164,25 @@ subprober -h
 ```
 git clone https://github.com/sysdig/wafer && cd wafer && pip3 install -r requirements.txt
 ```
+
+### Tool like nuclei
+#### afrog
+
+```
+go install -v github.com/zan8in/afrog/v3/cmd/afrog@latest
+```
+
+
+
+# Host header injection"
+
+### toxicache: About
+Go scanner to find web cache poisoning vulnerabilities in a list of URLs
+
+```
+go install github.com/xhzeem/toxicache@latest
+```
+
 
 
 
