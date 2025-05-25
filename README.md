@@ -138,6 +138,24 @@ go install github.com/gwen001/github-subdomains@latest
 https://github.com/RevoltSecurities/Subdominator
 ```
 
+### Subprober
+
+```
+git clone https://github.com/RevoltSecurities/SubProber.git
+cd Subprober
+pip install .
+subprober -h
+```
+
+
+# Misc:
+
+### Wafer: Wafer is a simple but effective web application firewall (WAF) fuzzing tool. It is designed to be used as a standalone script, it uses various techniques build payloads which could potentially bypass a WAF.
+
+```
+git clone https://github.com/sysdig/wafer && cd wafer && pip3 install -r requirements.txt
+```
+
 
 
 
