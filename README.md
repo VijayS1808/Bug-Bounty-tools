@@ -7,6 +7,12 @@ git clone https://github.com/amitlttwo/Endpoint-Extractor.git
 
 ```
 
+### nipejs: Simplify your life with leak detection in JavaScript. NipeJS streamlines the use of regex, making it effortless to uncover potential leaks.
+
+```
+go install github.com/i5nipe/nipejs/v2@latest
+```
+
 ### JSNinja: Extract secrets, endpoints.
 
 ```
