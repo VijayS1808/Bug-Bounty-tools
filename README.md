@@ -73,6 +73,63 @@ go build .
 
 
 
+🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯🎯
+🎯 Subdomain Enumeration Tools
+
+## crtndstry: Lightweight subdomain finder
+
+```
+https://github.com/nahamsec/crtndstry.git
+```
+
+## Knock: Python-based subdomain scanner
+
+```
+pip install knock-subdomains
+```
+
+## SubScan: Chrome Extension for subdomain enumeration
+
+```
+git clone https://github.com/ractiurd/SubScan.git
+```
+
+## subfalcon: Subdomain discovery & takeover detection
+
+```
+go install github.com/cyinnove/subfalcon/cmd/subfalcon@latest
+```
+
+## Subseeker: Python-based subdomain enumerator
+
+```
+git clone https://github.com/DFC302/subseeker.git
+chmod 755 core/subseeker.py
+```
+
+## crt: Subdomains via crt.sh
+
+```
+go install github.com/cemulus/crt@latest
+```
+
+## Subdomz: Automated subdomain finder
+
+```
+git clone https://github.com/0xPugal/Subdomz.git
+```
+
+## github-subdomains: Find subdomains via GitHub search
+
+``
+go install github.com/gwen001/github-subdomains@latest
+```
+
+
+
+
+
+
 
 
 
